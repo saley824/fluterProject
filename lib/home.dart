@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'buttons.dart';
-import 'form.dart';
+import 'custom_form.dart';
 import 'input_provider.dart';
 
 class Home extends StatelessWidget {
@@ -10,14 +10,14 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-        create: (context) => InputProvider(),
+        create: (_) => InputProvider(),
         child: Scaffold(
             appBar: AppBar(
               title: const Text("Naslov"),
             ),
-            body: Center(
+            body: const Center(
               child: Column(
-                children: [Buttons(), Expanded(child: CustomForm())],
+                children: [Expanded(child: CustomForm()), Buttons()],
               ),
             )));
   }

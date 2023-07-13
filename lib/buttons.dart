@@ -8,27 +8,32 @@ class Buttons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final inputProvider = Provider.of<InputProvider>(context, listen: false);
-
-    return Column(
-      children: [
-        ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.blue,
-            ),
-            onPressed: () {
-              inputProvider.setZero();
-            },
-            child: const Text('First')),
-        ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.lightGreen,
-            ),
-            onPressed: () {
-              inputProvider.setOne();
-            },
-            child: const Text('Second'))
-      ],
-    );
+    return Consumer<InputProvider>(builder: (context, inputProvider, child) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: inputProvider.show == 0
+                      ? const Color.fromARGB(255, 12, 53, 87)
+                      : Colors.lightBlue,
+                  fixedSize: const Size(150, 50)),
+              onPressed: () {
+                inputProvider.setZero();
+              },
+              child: const Text('First')),
+          ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: inputProvider.show == 1
+                      ? Color.fromARGB(255, 12, 53, 87)
+                      : Colors.lightBlue,
+                  fixedSize: const Size(150, 50)),
+              onPressed: () {
+                inputProvider.setOne();
+              },
+              child: const Text('Second'))
+        ],
+      );
+    });
   }
 }
