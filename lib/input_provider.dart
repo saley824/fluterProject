@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
+enum ShowScreen { first, second }
+
 class InputProvider extends ChangeNotifier {
   /// Internal, private state of the cart.
   final List<String> inputs = [];
   final TextEditingController controller = TextEditingController();
-  int show = 0; //Pokisaj ovo rijesiti sa enumeracijom.Pricali smo juce i tome.
+  ShowScreen showScreen = ShowScreen.first;
+  //int show = 0; //Pokisaj ovo rijesiti sa enumeracijom.Pricali smo juce i tome.
 
   void add(String input) {
     inputs.add(input);
@@ -17,12 +20,12 @@ class InputProvider extends ChangeNotifier {
   }
 
   void setZero() {
-    show = 0;
+    showScreen = ShowScreen.first;
     notifyListeners();
   }
 
   void setOne() {
-    show = 1;
+    showScreen = ShowScreen.second;
     notifyListeners();
   }
 }

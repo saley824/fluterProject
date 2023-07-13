@@ -10,15 +10,15 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-        create: (_) => InputProvider(),
-        child: Scaffold(
-            appBar: AppBar(
-              title: const Text("Naslov"),
-            ),
-            body: const Center(
-              child: Column(
-                children: [Expanded(child: CustomForm()), Buttons()],
-              ),
-            ))); //dobra navika da se dodavanjem zareza fino kod formatira
+      create: (_) => InputProvider(),
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text("Naslov"),
+        ),
+        body: const Column(
+          children: [Expanded(child: CustomForm()), Buttons()],
+        ),
+      ),
+    ); //dobra navika da se dodavanjem zareza fino kod formatira
   }
 }
