@@ -1,0 +1,4 @@
+listiview builder umjesto kolone 
+buttone na dno
+selected button
+boxovi za listu (tekst bijel, pozadinu obojiti)
