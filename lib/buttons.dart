@@ -9,15 +9,18 @@ class Buttons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<InputProvider>(builder: (context, inputProvider, child) {
+      //arrow function
       return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           ElevatedButton(
               style: ElevatedButton.styleFrom(
                   backgroundColor: inputProvider.show == 0
-                      ? const Color.fromARGB(255, 12, 53, 87)
+                      ? const Color.fromARGB(255, 12, 53,
+                          87) //pokusaj napraviti file sa definisanim bojama pa
+                      //boje referencirati iz tog file-a
                       : Colors.lightBlue,
-                  fixedSize: const Size(150, 50)),
+                  fixedSize: const Size(150, 50)), //(tacka 2. u tasks file)
               onPressed: () {
                 inputProvider.setZero();
               },
