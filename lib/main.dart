@@ -11,8 +11,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     const appTitle = 'Form Styling Demo';
     return const MaterialApp(
-      title: appTitle,
-      home: PostsScreen(),
+      title: appTitle, home: Home(),
+      // home: PostsScreen(),
     );
   }
 }

@@ -19,6 +19,6 @@ class Home extends StatelessWidget {
           children: [Expanded(child: CustomForm()), Buttons()],
         ),
       ),
-    ); //dobra navika da se dodavanjem zareza fino kod formatira
+    );
   }
 }

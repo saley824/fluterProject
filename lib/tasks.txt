@@ -1,4 +1,3 @@
-1.Problems lista treba da bude prazna (kod rijeci koje spell checker prijavi njih treba dodati u workspace settings kako bi bile zanemarene)
-2.U ovako napisanom kodu imamo dva dugmeta zakucane sirine. Sta ako se aplikacija nadje na telefonu koji nije dovoljno sirok?? 
-    Pokusaj isto napraviti samo sto  neces sirinu zakucavati. hint: Expanded elemenata u row-u
-3.
+1. odlicano odradjen posao.
+2. opet sam ti prokomentario kod i neke sitnice pa to popravi.
+3. dodaj trece dugme na dnu koje ce onda prikazati ekran tj listu fetchovnaih titlova.

@@ -15,7 +15,7 @@ class CustomForm extends StatelessWidget {
                 ShowScreen.first
             ? Column(children: [
                 const SizedBox(
-                  width: 10,
+                  width: 10, //nema potrebe za sirino
                   height: 10,
                 ),
                 //za pravljenje "praznog prostora" je najbolje koristiti SizedBox   DONE
@@ -38,6 +38,7 @@ class CustomForm extends StatelessWidget {
                 itemCount: inputProvider.inputs.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
+                      //ovo mozes odvojiti u poseban widget i onda ga iskoristiti za listu onih title-ova
                       height: 40,
                       decoration: BoxDecoration(
                           color: ColorSelect.yellow,

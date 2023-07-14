@@ -23,7 +23,9 @@ class _MyPostsState extends State<PostsScreen> {
     return Scaffold(
       appBar: AppBar(title: const Text("Posts")),
       body: FutureBuilder<Post>(
-          future: futPost,
+          future:
+              futPost, //future je u stvari funkcija koja ce ti dohvatiti i vratiti podatke tako da je ovdje trebalo proslijediti funkciju
+          //koja bi se nalazila u provajderu. samim ti ne bi bilo potrebe da ovo bude statefull widget vec providerom za ovaj ekran
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return Text(snapshot.data!.title);
