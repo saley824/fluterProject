@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'buttons.dart';
 import 'custom_form.dart';
-import 'input_provider.dart';
+import 'providers/input_provider.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});

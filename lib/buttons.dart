@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'colors.dart';
-import 'input_provider.dart';
+import 'providers/input_provider.dart';
 
 class Buttons extends StatelessWidget {
   const Buttons({super.key});
@@ -28,7 +28,7 @@ class Buttons extends StatelessWidget {
                         //     const Size(150, 50)
                       ), //(tacka 2. u tasks file)
                       onPressed: () {
-                        inputProvider.setZero();
+                        inputProvider.setFirst();
                       },
                       child: const Text('First')),
                 ),
@@ -45,10 +45,27 @@ class Buttons extends StatelessWidget {
                         // fixedSize: const Size(150, 50),
                       ),
                       onPressed: () {
-                        inputProvider.setOne();
+                        inputProvider.setSecond();
                       },
                       child: const Text('Second')),
-                )
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            inputProvider.showScreen == ShowScreen.third
+                                ? ColorSelect.darkBlue
+                                : ColorSelect.lightBlue,
+                        // fixedSize: const Size(150, 50),
+                      ),
+                      onPressed: () {
+                        inputProvider.setThird();
+                      },
+                      child: const Text('Third')),
+                ),
               ],
             ));
   }

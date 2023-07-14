@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum ShowScreen { first, second }
+enum ShowScreen { first, second, third }
 
 class InputProvider extends ChangeNotifier {
   /// Internal, private state of the cart.
@@ -19,13 +19,18 @@ class InputProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setZero() {
+  void setFirst() {
     showScreen = ShowScreen.first;
     notifyListeners();
   }
 
-  void setOne() {
+  void setSecond() {
     showScreen = ShowScreen.second;
+    notifyListeners();
+  }
+
+  void setThird() {
+    showScreen = ShowScreen.third;
     notifyListeners();
   }
 }
