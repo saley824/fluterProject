@@ -1,3 +1,2 @@
-1. odlicano odradjen posao.
-2. opet sam ti prokomentario kod i neke sitnice pa to popravi.
-3. dodaj trece dugme na dnu koje ce onda prikazati ekran tj listu fetchovnaih titlova.
+1.Za listu postova napravi novi list element widget na kom se prikazuje id posta,title i imace ikonu kantice. kada se klikne na nju taj post ce biti uklonjen iz liste.
+2.Maksimalno sredjen kod. Znaci bez komentara,bez ovog file-a,svi problemi rijeseni,uklonjen visak koda...
