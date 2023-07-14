@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prov_project/posts_screen.dart';
+import 'package:prov_project/providers/fetch_provider.dart';
 import 'package:provider/provider.dart';
 
 import 'package:prov_project/providers/input_provider.dart';
@@ -11,7 +12,7 @@ class CustomForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<InputProvider>(builder: (context, inputProvider, child) {
+    return Consumer<InputProvider>(builder: (_, inputProvider, child) {
       switch (inputProvider.showScreen) {
         case ShowScreen.first:
           return Column(children: [
@@ -46,7 +47,10 @@ class CustomForm extends StatelessWidget {
         //   break;
 
         case ShowScreen.third:
-          return const PostsScreen();
+          return ChangeNotifierProvider(
+            create: (_) => FetchProvider(),
+            child: const PostsScreen(),
+          );
         //     break;
       }
     });
