@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:prov_project/posts_screen.dart';
-import 'package:prov_project/providers/fetch_provider.dart';
+
+import 'package:prov_project/providers/posts_provider.dart';
 import 'package:provider/provider.dart';
 
 import 'package:prov_project/providers/input_provider.dart';
 
+import 'screens/posts_screen.dart';
+import 'screens/input_screen.dart';
 import 'widgets/list_item.dart';
 
 class CustomForm extends StatelessWidget {
@@ -15,43 +17,21 @@ class CustomForm extends StatelessWidget {
     return Consumer<InputProvider>(builder: (_, inputProvider, child) {
       switch (inputProvider.showScreen) {
         case ShowScreen.first:
-          return Column(children: [
-            const SizedBox(
-              //nema potrebe za sirino DONE
-              height: 10,
-            ),
-            //za pravljenje "praznog prostora" je najbolje koristiti SizedBox   DONE
-            TextField(
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-              ),
-              controller: inputProvider.controller,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                inputProvider.add(inputProvider.controller.text);
-              },
-              child: const Text("Click"),
-            ),
-          ]);
-        //  break;
+          return InputScreen(inputProvider: inputProvider);
         case ShowScreen.second:
           return ListView.builder(
-            //rekli smo ListView.builder   DONE
             padding: const EdgeInsets.all(12.0),
             itemCount: inputProvider.inputs.length,
             itemBuilder: (BuildContext context, int index) {
               return ListItem(item: inputProvider.inputs[index]);
             },
           );
-        //   break;
 
         case ShowScreen.third:
           return ChangeNotifierProvider(
-            create: (_) => FetchProvider(),
+            create: (_) => PostsProvider(),
             child: const PostsScreen(),
           );
-        //     break;
       }
     });
   }

@@ -9,7 +9,6 @@ class ListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        //ovo mozes odvojiti u poseban widget i onda ga iskoristiti za listu onih title-ova DONE
         height: 40,
         decoration: BoxDecoration(
             color: ColorSelect.yellow,

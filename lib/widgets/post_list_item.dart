@@ -3,14 +3,20 @@ import 'package:flutter/material.dart';
 import '../colors.dart';
 
 class PostListItem extends StatelessWidget {
-  final String item;
-  const PostListItem({super.key, required this.item});
+  final String title;
+  final int id;
+
+  final Function(int id) deletePost;
+  const PostListItem(
+      {super.key,
+      required this.title,
+      required this.id,
+      required this.deletePost});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        //ovo mozes odvojiti u poseban widget i onda ga iskoristiti za listu onih title-ova DONE
-        height: 40,
+        height: 50,
         decoration: BoxDecoration(
             color: ColorSelect.yellow,
             border: Border.all(
@@ -24,8 +30,22 @@ class PostListItem extends StatelessWidget {
               color: ColorSelect.white,
             ),
             Expanded(
-                child: Text(item,
-                    style: const TextStyle(color: ColorSelect.white))),
+                child: Column(children: [
+              Text(id.toString(),
+                  style: const TextStyle(color: ColorSelect.white)),
+              Expanded(
+                child: Text(
+                  title,
+                  style: const TextStyle(color: ColorSelect.white),
+                ),
+              ),
+            ])),
+            IconButton(
+                onPressed: () {
+                  deletePost(id);
+                },
+                icon: const Icon(Icons.delete))
+            // const Icon(Icons.delete, onPressed: ActionDispatcher())
           ],
         ));
   }
